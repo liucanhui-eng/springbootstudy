@@ -18,14 +18,9 @@ public class MyController {
     public String getUserById(String id){
         System.out.println(id);
         String res=null;
-        try {
-            int _id = Integer.parseInt(id);
-            User user = userService.getUserById(_id);
-            res=user.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        int _id = Integer.parseInt(id);
+        User user = userService.getUserById(_id);
+        res=user.toString();
         return res;
     }
 }
