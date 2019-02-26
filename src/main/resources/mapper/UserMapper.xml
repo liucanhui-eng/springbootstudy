@@ -79,4 +79,27 @@
       sex = #{sex,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByExample" parameterType="com.model.pro.User" resultType="com.model.pro.User">
+    select
+      <include refid="Base_Column_List"/>
+    from   user
+    where true
+    <if test="name != null" >
+      and name = #{name,jdbcType=VARCHAR}
+    </if>
+    <if test="age != null" >
+      and age = #{age,jdbcType=INTEGER}
+    </if>
+    <if test="sex != null" >
+      and sex = #{sex,jdbcType=VARCHAR}
+    </if>
+    <if test="id != null">
+      and id = #{id,jdbcType=VARCHAR}
+    </if>
+
+  </select>
+
+
+
 </mapper>
