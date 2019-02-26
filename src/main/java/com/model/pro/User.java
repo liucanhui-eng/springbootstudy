@@ -14,5 +14,12 @@ public class User {
 
     private String sex;
 
+    public void build(Integer id,String name,Integer age,String sex){
+        this.setId(id);
+        this.setSex(sex);
+        this.setAge(age);
+        this.setName(name);
+    }
+
 
 }
